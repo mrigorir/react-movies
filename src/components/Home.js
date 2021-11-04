@@ -12,7 +12,6 @@ import useHomeFetch from './hooks/useHomeFetch';
 const Home = () => {
   const { state, loading, error } = useHomeFetch();
   console.log(state, loading, error);
-  console.log(state.results[0].id);
   return (
     <>
       <h1>
