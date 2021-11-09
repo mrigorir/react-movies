@@ -1,9 +1,9 @@
 import React from 'react';
 // config
 // POSTER_SIZE
-// import { BACKDROP_SIZE, IMAGE_BASE_URL } from '../services/config';
+import { BACKDROP_SIZE, IMAGE_BASE_URL } from '../services/config';
 // Components
-// import HeroImage from './HeroImage';
+import HeroImage from './HeroImage';
 // Hook
 import useHomeFetch from './hooks/useHomeFetch';
 // Image
@@ -14,9 +14,15 @@ const Home = () => {
   console.log(state, loading, error);
   return (
     <>
-      <h1>
-        dilo
-      </h1>
+      {state.rsults[0]
+        ? (
+          <HeroImage
+            image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
+            title={state.rsults[0].original_title}
+            text={state.results[0].overview}
+          />
+        )
+        : null}
     </>
   );
 };
