@@ -1,5 +1,4 @@
 import React from 'react';
-import fetchMovies from '../services/API';
 // config
 // POSTER_SIZE
 // import { BACKDROP_SIZE, IMAGE_BASE_URL } from '../services/config';
@@ -11,7 +10,6 @@ import fetchMovies from '../services/API';
 // import NoImage from '../images/no_image.jpg';
 
 const Home = () => {
-  console.log(fetchMovies());
   return (
     <h1>Home</h1>
   );
