@@ -5,21 +5,12 @@ import React from 'react';
 // Components
 // import HeroImage from './HeroImage';
 // Hook
-import useHomeFetch from './hooks/useHomeFetch';
+// import useHomeFetch from './hooks/useHomeFetch';
 // Image
 // import NoImage from '../images/no_image.jpg';
 
-const Home = () => {
-  const { state, loading, error } = useHomeFetch();
-  console.log(state, loading, error);
-  console.log(state.results[0].id);
-  return (
-    <>
-      <h1>
-        dilo
-      </h1>
-    </>
-  );
-};
+const Home = () => (
+  <h1>Home</h1>
+);
 
 export default Home;
