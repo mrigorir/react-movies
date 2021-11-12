@@ -9,10 +9,8 @@ import React from 'react';
 // Image
 // import NoImage from '../images/no_image.jpg';
 
-const Home = () => {
-  return (
-    <h1>Home</h1>
-  );
-};
+const Home = () => (
+  <h1>Home</h1>
+);
 
 export default Home;

@@ -1,19 +1,20 @@
-import fetchMovies from "../services/API";
+import fetchMovies from '../services/API';
 
-//default
+// default
+let outcome = '';
 const initialState = [
   {
     pages: 0,
     results: 0,
     total_pages: 0,
     total_results: 0,
-  }
+  },
 ];
 
-//pattern
+// pattern
 const FETCH_MOVIES = 'react-movies/movies/FETCH_MOVIES';
 
-//actions
+// actions
 const fetchMoviesActions = () => async (dispatch) => {
   const movies = await fetchMovies();
   dispatch({
@@ -22,15 +23,15 @@ const fetchMoviesActions = () => async (dispatch) => {
   });
 };
 
-//reducers
+// reducers
 const moviesReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_MOVIES:
-      const outcome = action.payload.page > 1 ? [...state, ...action.payload] : [...action.payload];
+      outcome = action.payload.page > 1 ? [...state, ...action.payload] : [...action.payload];
       return outcome;
     default:
       return state;
   }
 };
 
-export default moviesReducer;
+export { moviesReducer, fetchMoviesActions };
